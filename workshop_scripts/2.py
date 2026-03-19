@@ -9,8 +9,8 @@ def decrypt(encrypted_message:str, key:int) -> str:
     return message
 
 def main():
-    input_path = "encrypted_data/2.txt"
-    output_path = "workshop_data/2.txt"
+    input_path = "../encrypted_data/2.txt"
+    output_path = "../workshop_data/2.txt"
     key = 2 # Assigned key
 
     # Read the encrypted file
