@@ -6,10 +6,10 @@ def decrypt(encrypted_message:str, key:int) -> str:
         message += decrypted_char
     return message
 
-with open('../encrypted_data/5.txt', 'r') as f:
+with open('encrypted_data/5.txt', 'r') as f:
     encrypted_data = f.read()
 
 decoded_5 = decrypt(encrypted_data, 5)
 
-with open('../workshop_data/5.txt', 'w') as f:
+with open('workshop_data/5.txt', 'w') as f:
     f.write(decoded_5)
