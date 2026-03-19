@@ -26,24 +26,24 @@ jobs:
               echo "No files found in workshop_scripts"
             else
               for f in "${files[@]}"; do
-                if [ -x "$f" ]; then
-                  echo "Running executable: $f"
-                  "$f"
-                else
-                  case "$f" in
-                    *.py)
-                      echo "Running python: $f"
-                      python "$f"
-                      ;;
-                    *.sh)
-                      echo "Running bash: $f"
-                      bash "$f"
-                      ;;
-                    *)
+                case "$f" in
+                  *.py)
+                    echo "Running python: $f"
+                    python "$f"
+                    ;;
+                  *.sh)
+                    echo "Running bash: $f"
+                    bash "$f"
+                    ;;
+                  *)
+                    if [ -x "$f" ]; then
+                      echo "Running executable: $f"
+                      "$f"
+                    else
                       echo "Skipping unknown/non-executable file: $f"
-                      ;;
-                  esac
-                fi
+                    fi
+                    ;;
+                esac
               done
             fi
           else
